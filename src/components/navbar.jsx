@@ -2,6 +2,11 @@ import logo from '../logo.svg'
 import { NavItems } from './nav-items'
 
 
+require('dotenv').config()
+const APIKEY = process.env.API_KEY
+
+console.log("APIKEY", APIKEY)
+
 export const Navbar = ({ text }) => {
     return (
         <div className=' bg-slate-100'>
