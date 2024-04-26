@@ -1,5 +1,6 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
@@ -17,8 +18,14 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),
+        new Dotenv({
+            path: './.env', // Path to .env file (this is the default)
+            safe: true, // load '.env.example' to verify the '.env' variables are all set. Try not to use this in production.
+        }),
         // Add your other plugins here
-    ],
+        ],
+        mode: 'development',
+
     module: {
         rules: [
             {
